@@ -32,23 +32,17 @@ namespace WindowsFormsApp1.UserClasses
                 if (InfoEmail.Port != -1)
                     mySmtpClient.Port = InfoEmail.Port;
 
-                NetworkCredential basicAuthenticationInfo = new
-                   NetworkCredential(
-                   InfoEmail.EmailAdressFrom.EmailAdress,
-                   InfoEmail.EmailPassword);
+                NetworkCredential basicAuthenticationInfo = new NetworkCredential(InfoEmail.EmailAdressFrom.EmailAdress, InfoEmail.EmailPassword);
 
                 mySmtpClient.Credentials = basicAuthenticationInfo;
 
-                MailAddress from = new MailAddress(
-                InfoEmail.EmailAdressFrom.EmailAdress,
-                InfoEmail.EmailAdressFrom.Name);
+                MailAddress from = new MailAddress( InfoEmail.EmailAdressFrom.EmailAdress,InfoEmail.EmailAdressFrom.Name);
                 MailAddress to = new MailAddress(
                 InfoEmail.EmailAdressTo.EmailAdress,
                 InfoEmail.EmailAdressTo.Name);
 
                 MailMessage myMail = new MailMessage(from, to);
-                MailAddress replyTo =
-                    new MailAddress(InfoEmail.EmailAdressFrom.EmailAdress);
+                MailAddress replyTo = new MailAddress(InfoEmail.EmailAdressFrom.EmailAdress);
                 myMail.ReplyToList.Add(replyTo);
                 Encoding encoding = Encoding.UTF8;
                 myMail.Subject = InfoEmail.Subject;
