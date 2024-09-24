@@ -12,7 +12,7 @@ namespace WindowsFormsApp1.UserClasses
         {
             SmtpClientAdress = "smtp.gmail.com";
             EmailAdressFrom = new StringPair("innocentizov@gmail.com", "Жаброва Е.С.");
-            EmailPassword = "qriu ozhr wkst bkxz";
+            EmailPassword = "qriuozhrwkstbkxz";
             Port = 587;
         }
     }
